@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="/hola.js"></script> -->
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+
+</head>
+
+<body>
+    <script>
+        console.log('hmmmm? :D');
+        var socket = io('http://localhost:3000');
+        socket.on('connect', () => {
+            console.log('Successfully connected!');
+        });
+
+        console.log(socket.id, 'ID CLIENTE')
+
+        socket.on('event', (data) => {
+            console.log(data, 'datA?')
+        });
+
+    </script>
+    <h1>Hola mundo 3!</h1>
+</body>
+
+</html>
