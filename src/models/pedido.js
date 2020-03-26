@@ -2,39 +2,41 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var schema = new Schema({
-    origin: {
+    origen: {
         lat: Number,
         lng: Number,
-        address: String
+        direccion: String,
+        puerta: String
     },
-    destination: {
+    destino: {
         lat: Number,
         lng: Number,
-        address: String
+        direccion: String,
+        puerta: String
     },
-    trip_promo_price: Number,
-    trip_price: Number,
+    costo: Number,
+    costo_real: Number,
     ranting: { type: mongoose.Schema.Types.ObjectId, ref: 'ranting' },
     rider: { type: mongoose.Schema.Types.ObjectId, ref: 'usuario' },
-    customer: { type: mongoose.Schema.Types.ObjectId, ref: 'usuario' },
-    distance: Number,
-    payment_method: String,
-    receiver_signature: {
+    cliente: { type: mongoose.Schema.Types.ObjectId, ref: 'usuario' },
+    distancia: Number,
+    metodo_de_pago: String,
+    firma_del_receptor: {
         url: String,
         id: String
     },
     balance: String,
-    origin_phone: String,
-    origin_name: String,
-    destination_name: String,
-    destination_phone: String,
-    instructions: String,
+    telefono_origen: String,
+    telefono_destino: String,
+    nombre_origen: String,
+    nombre_destino: String,
+    instrucciones: String,
     entrega_estimada: String,
-    type: String,
-    product_price: Number,
-    product_description: String,
-    delivery_time: String,
-    created_order_date: String,
+    tipo: String,
+    precio_producto: Number,
+    descripcion_producto: String,
+    tiempo_entrega: String,
+    fecha_creacion: String,
     from: String,
     created: Number,
     acceso_web: Boolean,
@@ -44,10 +46,10 @@ var schema = new Schema({
     cobrar_productos: Boolean,
     proximo: { type: Boolean, default: false },
     entregado: { type: Boolean, default: false },
-    cancelled: { type: Boolean, default: false },
-    is: { type: Boolean, default: true },
+    cancelado: { type: Boolean, default: false },
+    activo: { type: Boolean, default: true },
     modificado_por_admin: Boolean,
     isActive: { type: Boolean, default: true },
 });
 
-module.exports = mongoose.model('Order', schema);
+module.exports = mongoose.model('Pedido', schema);

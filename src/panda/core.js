@@ -29,9 +29,9 @@ amqp.connect('amqp://localhost', function (error0, connection) {
         producer(channel, queue);
 
         // Tres consumidores que asignan riders
-        consumer(channel, queue);
-        consumer(channel, queue);
-        consumer(channel, queue);
+        consumer(channel, queue, 'c1');
+        consumer(channel, queue, 'c2');
+        consumer(channel, queue, 'c3');
         // consumerUrgencia(channel, queue);
 
     });

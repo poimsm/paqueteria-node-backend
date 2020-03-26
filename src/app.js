@@ -37,6 +37,7 @@ app.use('/', require('./routes/index'));
 app.use('/', require('./routes/api-version'));
 // app.use('/db', require('./routes/db-admin'));
 
+app.use('/', require('./routes/hellow'));
 
 //-------------------------
 //       Cron jobs
@@ -55,7 +56,7 @@ crons.riders_liberacion();
 //----------------------------
 //       Dispatching system
 //----------------------------
-require('./panda/core')
+// require('./panda/core')
 
 
 

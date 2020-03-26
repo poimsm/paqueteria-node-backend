@@ -10,4 +10,4 @@ var schema = new Schema({
     isActive: { type: Boolean, default: true }
 });
 
-module.exports = mongoose.model('panda_customer_state', schema);
+module.exports = mongoose.model('panda_cliente', schema);

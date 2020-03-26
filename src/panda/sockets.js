@@ -3,15 +3,15 @@ const { io } = require('../app')
 const EventEmitter = require('events').EventEmitter
 const event = new EventEmitter
 
-const RiderState = require('../models/rider-state');
-const RiderLocation = require('../models/rider-state');
-const CustomerState = require('../models/customer-state');
+const Rider = require('../models/panda-rider');
+const RiderLocalizacion = require('../models/panda-rider-localizacion');
+const Cliente = require('../models/panda-cliente');
 
 
 io.on('connection', (socket) => {
-    event.on('rider_state', msg => handler(msg, socket, RiderState));
-    event.on('rider_location', msg => handler(msg, socket, RiderLocation));
-    event.on('customer_state', msg => handler(msg, socket, CustomerState));
+    event.on('riders', msg => handler(msg, socket, Rider));
+    event.on('riders_localizacion', msg => handler(msg, socket, RiderLocalizacion));
+    event.on('clientes', msg => handler(msg, socket, Cliente));
 });
 
 let handler = (msg, socket, db) => {

@@ -3,14 +3,13 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
     rider: String,
-    city: String,
-    vehicle: String,
-    state: Number,
+    ciudad: String,
+    vehiculo: String,
+    estado: Number,
     isOnline: Boolean,
     isActive: Boolean,
     order: String,
-    customer: String,
-    activeId: String
+    cliente_activo: String
 });
 
 module.exports = mongoose.model('panda_rider_state', schema);
