@@ -38,6 +38,8 @@ app.use('/', require('./routes/api-version'));
 // app.use('/db', require('./routes/db-admin'));
 
 app.use('/', require('./routes/hellow'));
+app.use('/', require('./routes/hello2'));
+
 
 //-------------------------
 //       Cron jobs

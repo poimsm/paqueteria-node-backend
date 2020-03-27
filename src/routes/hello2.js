@@ -6,11 +6,11 @@ const { hmm } = require('./setter');
 
 let arr = [];
 
-router.get('/hello', (req, res) => {
-    arr.push('hola')
-    console.log(arr, 'arr');
+router.get('/hello2', (req, res) => {
+    arr.push('hola2')
+    console.log(arr, 'arr2');
     hmm.set();
-    res.json({ message: 'hola campeon' })
+    res.json({ message: 'hola campeon2' })
 });
 
 module.exports = router;
